@@ -7,15 +7,14 @@ class Solution {
             int min=Integer.MAX_VALUE;
             Arrays.sort(nums);
           for(int i=nums.length-1;i>=nums.length-4;i--)
-          {
-              for(int j=0;j<4-p;j++)
-              {
-                  int k=nums[i]-nums[j];
+          { 
+              int k=nums[i]-nums[3-p];
+             
                   if(k<min)
                   {
                       min=k;
                   }
-              }
+              
               p++;
           }
             
