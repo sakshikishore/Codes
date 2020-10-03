@@ -18,7 +18,7 @@ class Solution {
                     a=b;
                     b=r;
                 }
-            }
+            
            int gcd=a;
             String k=str1.substring(0,gcd);
             Pattern p=Pattern.compile(k);
@@ -41,6 +41,7 @@ class Solution {
                    result=k;
                }
             }
+           }
            
         }
         
