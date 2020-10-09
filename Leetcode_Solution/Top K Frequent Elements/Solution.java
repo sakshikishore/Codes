@@ -40,13 +40,13 @@ class Solution {
                 }
          
             }
-        }
-        
+        }       
         int result[]=new int[k];
         for(int i=0;i<k;i++)
         {
             result[i]=a[i];
-        }       
+        } 
+        
         return result;
     }
 }
