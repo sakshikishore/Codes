@@ -17,7 +17,7 @@ class Solution {
             len++;
             curr=curr.next;
         }
-        if(len>1 && k>0  && k%len!=0)
+        if(len>1 && k>0 && k%len!=0)
         {
         k=k%len;
         int p=len-k;
