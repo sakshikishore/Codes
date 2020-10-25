@@ -21,7 +21,7 @@ class Solution {
                 }
                 else if(releaseTimes[i]-releaseTimes[i-1]==max)
                 {
-                    if(keysPressed.charAt(i)>keysPressed.charAt(i-1))
+                    if(keysPressed.charAt(i)>result)
                     {
                         result=keysPressed.charAt(i);
                     }
