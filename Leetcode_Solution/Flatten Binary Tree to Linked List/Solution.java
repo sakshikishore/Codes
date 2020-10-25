@@ -26,7 +26,6 @@ class Solution {
     }
     public void flatten(TreeNode root) {
         PreOrder(root);
-        TreeNode head=null;
         int i=0; 
         TreeNode ptr=root;
         while(i<l.size())
