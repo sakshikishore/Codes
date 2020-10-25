@@ -1,6 +1,6 @@
 class Solution {
     public char slowestKey(int[] releaseTimes, String keysPressed) {
-        int max=0;
+        int max=-1;
         char result='a';
         for(int i=0;i<keysPressed.length();i++)
         {
