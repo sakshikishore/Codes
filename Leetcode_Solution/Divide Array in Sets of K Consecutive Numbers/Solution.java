@@ -36,6 +36,7 @@ class Solution {
                              m=i+1;
                              prev=i+1;
                              l=prev;
+                             i++;
                          }
                          else
                          {
