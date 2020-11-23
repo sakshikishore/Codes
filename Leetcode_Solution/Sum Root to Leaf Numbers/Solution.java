@@ -25,6 +25,11 @@ class Solution {
          while(q.size()!=0)
          {
              TreeNode temp=q.poll();
+              if(temp.left==null && temp.right==null)
+             {
+                  sum=sum+h.get(temp);
+                  continue;
+             }
              if(temp.left!=null)
              {
                  q.add(temp.left);
@@ -35,11 +40,7 @@ class Solution {
                  q.add(temp.right);
                  h.put(temp.right,(h.get(temp)*10)+temp.right.val);
              }
-             if(temp.left==null && temp.right==null)
-             {
-                   sum=sum+h.get(temp);
-                   
-             }
+            
          }
         }
         
