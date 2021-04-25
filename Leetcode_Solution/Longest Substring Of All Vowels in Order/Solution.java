@@ -1,6 +1,5 @@
 class Solution {
     public int longestBeautifulSubstring(String word) {
-        int ch[]=new int[5];
         int count=0;
         int p=0;
         int max=0;
