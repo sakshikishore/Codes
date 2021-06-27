@@ -38,6 +38,7 @@ class Solution {
         }
         if(count==1)
         {
+            //remove b
             j=0;
              for(int i=0;i<nums.length;i++)
              {
