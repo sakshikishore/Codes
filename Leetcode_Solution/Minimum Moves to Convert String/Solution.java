@@ -6,7 +6,7 @@ class Solution {
             if(s.charAt(i)=='X')
             {
                 count++;
-                if(count>0 && count+l==3)
+                if(count+l==3)
                 {
                     result++;
                     count=0;
@@ -18,7 +18,7 @@ class Solution {
                 if(count>0)
                 {
                     l++;
-                    if(count>0 && count+l==3)
+                    if(count+l==3)
                     {
                         result++;
                         count=0;
