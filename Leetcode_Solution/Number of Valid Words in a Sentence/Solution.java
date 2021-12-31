@@ -17,7 +17,7 @@ class Solution {
              }
              if(arr[i].charAt(j)=='-')
              {
-                 if( hyphencount==0 && j>0 && arr[i].charAt(j-1)>='a' && arr[i].charAt(j-1)<='z' && j<arr[i].length()-1 && arr[i].charAt(j+1)>='a' && arr[i].charAt(j+1)<='z')
+                 if(hyphencount==0 && j>0 && arr[i].charAt(j-1)>='a' && arr[i].charAt(j-1)<='z' && j<arr[i].length()-1 && arr[i].charAt(j+1)>='a' && arr[i].charAt(j+1)<='z')
                  {
                      hyphencount=1;
                  }
