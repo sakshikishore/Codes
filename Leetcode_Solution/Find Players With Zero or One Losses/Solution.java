@@ -11,7 +11,7 @@ class Solution {
             looser[matches[i][1]]++;
         }
         
-        for(int i=0;i<100001;i++)
+        for(int i=1;i<100001;i++)
         {
             if(winner[i]>0 && looser[i]==0)
             {
