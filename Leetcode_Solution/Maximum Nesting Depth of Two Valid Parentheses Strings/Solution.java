@@ -13,16 +13,7 @@ class Solution {
                index.push(i);
            }
            else
-           {
-               if(stck.size()==1)
-               {
-                   stck.pop();
-                   count=0;
-                   arr[index.pop()]=0;
-                   arr[i]=0;               
-               }
-               else
-               {
+           {            
                    if(count%2==0)
                    {
                    stck.pop();
@@ -37,7 +28,6 @@ class Solution {
                        arr[index.pop()]=0;
                        arr[i]=0; 
                    }
-               }
            }
         }
         
