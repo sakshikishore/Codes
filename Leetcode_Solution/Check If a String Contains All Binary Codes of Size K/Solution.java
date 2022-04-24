@@ -17,25 +17,13 @@ class Solution {
                     break;
                 }
             }
-            if(t.size()<(int)Math.pow(2,k))
+            if(t.size()==(int)Math.pow(2,k))
             {
-                result=false;
+                result=true;
             }
             else
             {
-                int j=0;
-                for(int x:t)
-                {
-                    if(x!=j)
-                    {
-                        result=false;
-                        break;
-                    }
-                    else
-                    {
-                        j++;
-                    }
-                }
+                result=false;
             }
         }
         else
