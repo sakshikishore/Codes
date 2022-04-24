@@ -17,11 +17,7 @@ class Solution {
                     break;
                 }
             }
-            if(t.size()==(int)Math.pow(2,k))
-            {
-                result=true;
-            }
-            else
+            if(t.size()!=(int)Math.pow(2,k))
             {
                 result=false;
             }
