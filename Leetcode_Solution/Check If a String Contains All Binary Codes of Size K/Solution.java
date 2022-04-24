@@ -1,7 +1,7 @@
 class Solution {
     public boolean hasAllCodes(String s, int k) {
         boolean result=true;
-        TreeSet<Integer> t=new TreeSet<Integer>();
+        TreeSet<String> t=new TreeSet<String>();
         if(s.length()>k)
         {
             int i=0;
@@ -9,7 +9,7 @@ class Solution {
             {
                 if(i+k<=s.length())
                 {
-                    t.add(Integer.parseInt(s.substring(i,i+k),2));
+                    t.add(s.substring(i,i+k));
                     i=i+1;
                 }
                 else
