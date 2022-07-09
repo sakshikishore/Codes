@@ -3,9 +3,7 @@ class Solution {
         int arr[]=new int[nums.length];
         arr[nums.length-1]=nums[nums.length-1];
         int max=arr[nums.length-1];
-        int secondMax=Integer.MIN_VALUE;
         int maxIndex=nums.length-1;
-        int secondIndex=-1;
         for(int i=nums.length-2;i>=0;i--)
         {
             if(k+i>=nums.length)
@@ -14,20 +12,11 @@ class Solution {
                 arr[i]=nums[i]+max;
                 if(max<=arr[i])
                 {
-                    secondMax=max;
-                    secondIndex=maxIndex;
                     max=arr[i];
                     maxIndex=i;
                     
                 }
-                else
-                {
-                    if(secondMax<arr[i])
-                    {
-                        secondMax=arr[i];
-                        secondIndex=i;
-                    }
-                }
+        
                 
             }
             else
@@ -44,15 +33,26 @@ class Solution {
                 }
                 else
                 {
-                   max=Integer.MIN_VALUE;
+                   int max1=Integer.MIN_VALUE;
+                   max=max1;
                    for(int j=i+1;j<=i+k;j++)
                     {
-                        if(nums[i]+arr[j]>max)
+                       if(arr[j]>max)
+                       {
+                           max=arr[j];
+                           maxIndex=j;
+                       }
+                        if(nums[i]+arr[j]>max1)
                         {
-                            max=nums[i]+arr[j];
+                            max1=nums[i]+arr[j];
                         }
                     }
-                    arr[i]=max;
+                    arr[i]=max1;
+                    if(arr[i]>max)
+                    {
+                        max=arr[i];
+                        maxIndex=i;
+                    }
                 }
             }
         }
