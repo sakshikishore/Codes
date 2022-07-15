@@ -35,7 +35,6 @@ class Solution {
                 arr=new int[2];
                 arr[0]=a1;
                 arr[1]=a2;
-                Arrays.sort(arr);
             }
             else
             {
