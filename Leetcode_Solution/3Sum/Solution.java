@@ -2,7 +2,6 @@ class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
       List<List<Integer>> list=new ArrayList();
         HashMap<ArrayList<Integer>,Integer> h1=new HashMap<ArrayList<Integer>,Integer>();
-        Arrays.sort(nums);
         for(int i=0;i<nums.length;i++)
         {
             HashMap<Integer,Integer> h=new HashMap<Integer,Integer>();
