@@ -17,6 +17,8 @@ class Solution {
             {
             int turn=0;
             int count=1;
+            if(arr[i]>0)
+            {
                 turn=-1;
             }
             else
@@ -27,8 +29,6 @@ class Solution {
             {
                 if(arr[j]<0 && turn==-1)
                 {
-            if(arr[i]>0)
-            {
                     count++;
                     turn=1;
                 }
