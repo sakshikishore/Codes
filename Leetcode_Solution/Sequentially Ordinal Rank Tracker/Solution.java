@@ -1,7 +1,7 @@
 class SORTracker {
     HashMap<Integer,ArrayList<String>> h;
     HashSet<Integer> hSet=new HashSet<Integer>();
-    ArrayList<Integer> l=new ArrayList<Integer>();
+    PriorityQueue<Integer> pq=new PriorityQueue<Integer>(Collections.reverseOrder());
     int i=0;
     public SORTracker() {
         h=new HashMap<Integer,ArrayList<String>>();
@@ -11,7 +11,7 @@ class SORTracker {
         if(!hSet.contains(score))
         {
             hSet.add(score);
-            l.add(score);
+            pq.add(score);
         }
         if(!h.containsKey(score))
         {
@@ -29,13 +29,13 @@ class SORTracker {
     
     public String get() {
        i++;
+        ArrayList<Integer> h2=new ArrayList<Integer>();
        String res="";
        int count=0;
-       Collections.sort(l);
-       
-           for(int j=l.size()-1;j>=0;j--)
+           while(pq.size()!=0)
            {
-               int x=l.get(j);
+               int x=pq.poll();
+               h2.add(x);
                if(h.get(x).size()+count<i)
                {
                    count=count+h.get(x).size();
@@ -50,6 +50,10 @@ class SORTracker {
                     break;
                }
            }
+        for(int i=0;i<h2.size();i++)
+        {
+            pq.add(h2.get(i));
+        }
        
         
         return res;
