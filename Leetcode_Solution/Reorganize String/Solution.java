@@ -8,11 +8,11 @@ class Solution {
         int curr=-1;
         String str="";
         char c='a';
+        int p=0;
         for(int i=0;i<s.length();i++)
         {
             int max=0;
             int flag=0;
-            int p=curr;
             for(int j=0;j<26;j++)
             {
                 if(ch[j]>max && j!=curr)
