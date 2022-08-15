@@ -5,7 +5,7 @@ class Solution {
         int max[]=new int[n+1];
         max[0]=0;
         max[1]=1;
-        for(int i=1;i<=n;i++)
+        for(int i=1;i<n;i++)
         {
             for(int j=i;j<=n;j++)
             {
@@ -14,13 +14,12 @@ class Solution {
                 {
                     if(j-i==0)
                     {
-                        if(i!=n)
-                        {
+                       
                           if(max[j]<i)
                           {
                               max[j]=i;
                           }
-                        }
+                        
                       
                     }
                     else
