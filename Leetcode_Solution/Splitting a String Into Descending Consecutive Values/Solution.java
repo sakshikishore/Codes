@@ -45,25 +45,8 @@ class Solution {
             String str[]=list.get(n).get(x).split(" ");
             if(str.length>1)
             {
-                long arr[]=new long[str.length];
-                for(int i=0;i<str.length;i++)
-                {
-                    arr[i]=Long.parseLong(str[i]);
-                }
-                int flag=0;
-                for(int i=1;i<str.length;i++)
-                {
-                   if(arr[i-1]-arr[i]!=1)
-                   {
-                       flag=1;
-                       break;
-                   }
-                }
-                if(flag==0)
-                {
-                    result=true;
-                    break;
-                }
+                result=true;
+                break;
             }
         }
         
