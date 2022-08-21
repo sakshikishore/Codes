@@ -34,7 +34,6 @@ class Solution {
                     available_experience+=experience[i];
                 }
             }
-            System.out.println(available_experience+" "+available_energy);
         }
         
         return count;
