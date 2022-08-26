@@ -1,6 +1,5 @@
 class Solution {
     public int partitionDisjoint(int[] nums) {
-        int max=nums[0];
         int rightmax=nums[0];
         int leftmax=nums[0];
         int ans=1;
