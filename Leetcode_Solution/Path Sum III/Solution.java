@@ -3,7 +3,6 @@ class Solution {
         int result=0;
         if(root!=null)
         {
-        HashSet<String> t=new HashSet<String>();
         HashMap<TreeNode,String> h=new HashMap<TreeNode,String>();
         Queue<TreeNode> q=new LinkedList<TreeNode>();
          q.add(root);
