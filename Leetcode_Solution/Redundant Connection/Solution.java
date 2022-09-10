@@ -17,12 +17,14 @@ class Solution {
                 node=p[node];
             }
             p[v1]=node;
+            int v1_parent=node;
             node=v2;
             while(p[node]!=node)
             {
                 node=p[node];
             }
             p[v2]=node;
+            int v2_parent=node;
             if(p[v1]==p[v2])
             {
                 result[0]=v1;
@@ -31,7 +33,7 @@ class Solution {
             }
             else
             {
-                p[node]=p[p[v1]];
+                p[v2_parent]=v1_parent;
             }
             
         }
