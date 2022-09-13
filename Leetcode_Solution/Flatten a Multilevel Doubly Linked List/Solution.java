@@ -17,7 +17,7 @@ class Solution {
         Stack<Node> stck=new Stack<Node>();
         ArrayList<Integer> l=new ArrayList<Integer>();
         Node ptr=head;
-        while(ptr!=null || stck.size()>0)
+        while(ptr!=null)
         {
             if(ptr.child!=null)
             {
