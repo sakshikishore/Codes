@@ -9,7 +9,6 @@ class Solution {
         }
         else
         {
-            int prev=-1;
             while(min<=max)
             {
                 int mid=(min+max)/2;
