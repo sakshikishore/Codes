@@ -7,13 +7,13 @@ class Solution {
         while(min<=max)
         {
             int mid=(max+min)/2;
+            double m=mid;
             double sum=0;
             int flag=0;
             for(int j=0;j<nums.length;j++)
             {
               if(nums[j]>mid)
               {
-                  double m=mid;
                   sum+=Math.ceil(nums[j]/m);
                   sum=sum-1;
                   if(sum>maxOperations)
