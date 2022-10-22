@@ -26,7 +26,6 @@ class WordDictionary {
     }
     
     public boolean search(String word) {
-      boolean result=false;
         if(found.contains(word))
         {
             return true;
@@ -34,7 +33,7 @@ class WordDictionary {
       else if(h.contains(word))
        {
            found.add(word);
-           result=true;
+           return true;
        }
        else
        {
@@ -77,14 +76,13 @@ class WordDictionary {
                        if(flag==0)
                        {
                            found.add(word);
-                           result=true;
-                           break;
+                           return true;
                        }
                }
            }
            }
        }
         
-        return result;
+        return false;
     }
 }
