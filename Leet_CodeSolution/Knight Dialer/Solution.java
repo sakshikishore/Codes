@@ -87,27 +87,26 @@ class Solution {
                 if(i==n)
                 {
                    sum=sum.add(a0);
-                   sum=sum.mod(BigInteger.valueOf(1000000007));
+                   sum=sum.mod(m);
                    sum=sum.add(a1);
-                   sum=sum.mod(BigInteger.valueOf(1000000007));
+                   sum=sum.mod(m);
                    sum=sum.add(a2);
-                    sum=sum.mod(BigInteger.valueOf(1000000007));
+                   sum=sum.mod(m);
                    sum=sum.add(a3);
-                    sum=sum.mod(BigInteger.valueOf(1000000007));
-                  sum= sum.add(a4);
-                   sum=sum.mod(BigInteger.valueOf(1000000007));
+                   sum=sum.mod(m);
+                   sum= sum.add(a4);
+                   sum=sum.mod(m);
                    sum=sum.add(a6);
-                    sum=sum.mod(BigInteger.valueOf(1000000007));
+                   sum=sum.mod(m);
                    sum=sum.add(a7);
-                    sum=sum.mod(BigInteger.valueOf(1000000007));
+                   sum=sum.mod(m);
                    sum=sum.add(a8);
-                    sum=sum.mod(BigInteger.valueOf(1000000007));
+                   sum=sum.mod(m);
                    sum=sum.add(a9);
-                    sum=sum.mod(BigInteger.valueOf(1000000007));
+                   sum=sum.mod(m);
 
                 }
             }
-            sum=sum.mod(BigInteger.valueOf(1000000007));
            
             return sum.intValue();
         
