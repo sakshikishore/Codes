@@ -80,8 +80,6 @@ class Solution {
 
             }
         }
-        
-        Collections.sort(l);
                 if(k%2==0)
                 {
                     int a=k/2;
