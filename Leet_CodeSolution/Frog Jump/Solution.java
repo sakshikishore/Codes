@@ -19,7 +19,7 @@ class Solution {
         l.add(1);
         l.add(2);
         h.put(1,l);
-        Queue<Integer> q=new LinkedList<Integer>();
+        PriorityQueue<Integer> q=new PriorityQueue<Integer>();
         q.add(1);
         while(q.size()>0)
         {
