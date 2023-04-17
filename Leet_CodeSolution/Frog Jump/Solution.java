@@ -19,12 +19,11 @@ class Solution {
         l.add(1);
         l.add(2);
         h.put(1,l);
-        PriorityQueue<Integer> q=new PriorityQueue<Integer>();
+        Queue<Integer> q=new LinkedList<Integer>();
         q.add(1);
         while(q.size()>0)
         {
             int p=q.poll();
-            System.out.println(p);
             if(p==n)
             {
                 return true;
