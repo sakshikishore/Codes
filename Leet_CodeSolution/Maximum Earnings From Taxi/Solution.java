@@ -1,6 +1,5 @@
 class Solution {
     public long maxTaxiEarnings(int n, int[][] rides) {
-        long result=0;
         long dp[]=new long[n+1];
         HashMap<Integer,ArrayList<Integer>> h=new HashMap<Integer,ArrayList<Integer>>();
         for(int i=0;i<rides.length;i++)
@@ -46,13 +45,9 @@ class Solution {
                     dp[i]=dp[i-1];
                 }
             }
-            if(dp[i]>result)
-            {
-                result=dp[i];
-            }
 
         }
 
-        return result;
+        return dp[n];
     }
 }
