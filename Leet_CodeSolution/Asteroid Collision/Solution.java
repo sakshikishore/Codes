@@ -11,8 +11,8 @@ class Solution {
             {
                 if((stck.peek()>0 && asteroids[i]<0))
                 {
-                     int p=Math.abs(stck.peek());
-                     int q=Math.abs(asteroids[i]);
+                     int p=stck.peek();
+                     int q=(-1)*asteroids[i];
                      if(p==q)
                      {
                          stck.pop();
