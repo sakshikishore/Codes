@@ -1,7 +1,6 @@
 class Solution {
     public boolean find132pattern(int[] nums) {
         int pref[]=new int[nums.length];
-        int suff[]=new int[nums.length];
         pref[0]=nums[0];
         int pMin=nums[0];
         ArrayList<Integer> l=new ArrayList<Integer>();
