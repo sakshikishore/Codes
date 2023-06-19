@@ -59,7 +59,6 @@ class Solution {
     }
     
     public int pick() {
-        System.out.println(list.size());
         int p=rand.nextInt(m);
         if(m==k)
         {
