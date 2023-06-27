@@ -196,7 +196,7 @@ class Solution {
                   }
               }
         }
-        if(flag==1 && index!=str2.length-1)
+        if(result && flag==1 && index!=str2.length-1)
         {
             result= false;
         }
