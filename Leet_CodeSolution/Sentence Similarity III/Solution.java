@@ -3,7 +3,7 @@ class Solution {
         String str1[]=sentence1.split(" ");
         String str2[]=sentence2.split(" ");
         boolean result=true;
-        // Case1: Insert words in Sentence2
+        // Case1: Insert sentence in Sentence2
         int flag=0;
         HashMap<String,ArrayList<Integer>> h=new HashMap<String,ArrayList<Integer>>();
         for(int i=0;i<str1.length;i++)
@@ -137,7 +137,7 @@ class Solution {
        if(!result)
        {
            result=true;
-           // Case2: Insert words in Sentence1
+           // Case2: Insert sentence in Sentence1
         flag=0;
          h=new HashMap<String,ArrayList<Integer>>();
         for(int i=0;i<str2.length;i++)
