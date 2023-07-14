@@ -21,7 +21,6 @@ class Solution {
                 if(prices[i]-buy-fee>profit)
                 {
                     profit=prices[i]-buy-fee;
-                    System.out.println(prices[i]+" "+buy+" "+profit);
                 }
                 if(f==1)
                 {
