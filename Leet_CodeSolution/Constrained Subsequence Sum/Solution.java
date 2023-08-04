@@ -117,7 +117,6 @@ class Solution {
             {
                 max=arr[i];
             }
-                System.out.println(arr[i]);
         }
 
         return max;
