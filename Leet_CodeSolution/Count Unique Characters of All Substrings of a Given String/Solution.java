@@ -19,7 +19,6 @@ class Solution {
         }
         for(int i=0;i<s.length();i++)
         {
-            System.out.println(result);
             if(h.get(s.charAt(i)).size()==1)
             {
                 result+=(i+1)*(s.length()-i);
