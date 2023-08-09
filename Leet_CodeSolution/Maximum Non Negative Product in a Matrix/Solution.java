@@ -42,7 +42,6 @@ class Solution {
                            min=grid[i][j]*list.get(count-1).get(k);
                       }
                    }
-                   int p=grid[0].length;
                    int x=count-grid[0].length;
                    for(int k=0;k<list.get(x).size();k++)
                    {
