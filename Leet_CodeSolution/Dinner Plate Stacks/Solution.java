@@ -154,7 +154,7 @@ class DinnerPlates {
                      }
                  }
 
-            if(s.size()==0)
+             else if(s.size()==0)
              {
                      int low=0,high=l.size()-1;
                      while(low<=high)
