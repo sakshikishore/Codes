@@ -58,7 +58,6 @@ class Solution {
                   }
               }
           }
-           System.out.println(res+" "+i);
       }
     
            return res;
