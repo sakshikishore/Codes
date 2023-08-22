@@ -48,7 +48,6 @@ class Solution {
                             result+=h.get(l);
                             h.remove(l);
                         }
-                        c[j]=0;
                         l.remove(j);
                         l.add(j,0);
                     }
