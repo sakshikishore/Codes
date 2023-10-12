@@ -46,7 +46,6 @@ class Solution {
 
         if(count>max)
         {
-            System.out.println(nums[nums.length-1]+" "+p);
             max=count;
         }
 
