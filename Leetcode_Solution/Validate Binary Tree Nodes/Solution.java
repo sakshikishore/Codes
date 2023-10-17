@@ -1,26 +1,29 @@
 class Solution {
     public boolean validateBinaryTreeNodes(int n, int[] leftChild, int[] rightChild) {
-        boolean result=true;
         HashMap<Integer,Integer> h=new HashMap<Integer,Integer>();
-        for(int i=0;i<n;i++)
+        for(int i=0;i<leftChild.length;i++)
         {
             if(leftChild[i]!=-1)
             {
-                if(h.containsKey(leftChild[i]))
+            if(h.containsKey(leftChild[i]))
+            {
+                return false;
+            }
+            else
+            {
+                if(h.containsKey(i) && h.get(i)==leftChild[i])
                 {
                     return false;
                 }
-                else
-                {
-                  if(h.containsKey(i) && h.get(i)==leftChild[i])
-                  {
-                      return false;
-                  }
-                   h.put(leftChild[i],i); 
-                }
+               
+                h.put(leftChild[i],i);
             }
-            if(rightChild[i]!=-1)
-            {
+            }
+        }
+         for(int i=0;i<rightChild.length;i++)
+        {
+                if(rightChild[i]!=-1)
+                {
                 if(h.containsKey(rightChild[i]))
                 {
                     return false;
@@ -28,77 +31,42 @@ class Solution {
                 else
                 {
                     if(h.containsKey(i) && h.get(i)==rightChild[i])
-                  {
-                      return false;
-                  }
-                   h.put(rightChild[i],i); 
+                    {
+                        return false;
+                    }
+                    h.put(rightChild[i],i);
                 }
             }
         }
-        int root=-1;
-        if(result)
-        {
-            int count=0;
-            for(int i=0;i<n;i++)
-            {
-                if(!h.containsKey(i))
-                {
-                    root=i;
-                    count++;
-                }
-            }
-            if(count>1)
-            {
-                result=false;
-            }
-        }
-        if(result)
-        {
-            HashSet<Integer> hset=new HashSet<Integer>();
-            hset.add(root);
-            Queue<Integer> q=new LinkedList<Integer>();
-            q.add(root);
-            while(q.size()>0)
-            {
-                int node=q.poll();
-                if(leftChild[node]!=-1)
-                {
-                    if(hset.contains(leftChild[node]))
-                    {
-                        result=false;
-                        break;
-                    }
-                    else
-                    {
-                        hset.add(leftChild[node]);
-                        q.add(leftChild[node]);
-                    }
-
-                }
-                if(rightChild[node]!=-1)
-                {
-                    if(hset.contains(rightChild[node]))
-                    {
-                        result=false;
-                        break;
-                    }
-                    else
-                    {
-                        hset.add(rightChild[node]);
-                        q.add(rightChild[node]);
-                    }
-
-                }
-            }
-            if(result)
-            {
-                if(hset.size()!=n)
-                {
-                    result=false;
-                }
-            }
-        }
-        
-        return result;
+      int root=0;
+      Queue<Integer> q=new LinkedList<Integer>();
+      q.add(root);
+      HashSet<Integer> hset=new HashSet<Integer>();
+      hset.add(root);
+      while(q.size()>0)
+      {
+          root=q.poll();
+          if(h.containsKey(root))
+          {
+              root=h.get(root);
+              if(hset.contains(root))
+              {
+                  return false;
+              }
+              q.add(root);
+              hset.add(root);
+          }
+      }
+       for(int i=1;i<n;i++)
+       {
+           if(h.containsKey(i))
+           {
+               if(h.get(i)!=root && !h.containsKey(h.get(i)))
+               {
+                   return false;
+               }
+           }
+       }
+        return true;
     }
 }
