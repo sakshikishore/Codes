@@ -1,59 +1,35 @@
 class Solution {
     public boolean isPathCrossing(String path) {
-        boolean result=false;
-        int ch[]=new int[4];
-        
+        int x=0,y=0; // N-> y++, S-> y-- || E-> x++, W-> x--;
+        HashSet<String> hset=new HashSet<String>();
+        hset.add("0 0");
         for(int i=0;i<path.length();i++)
         {
-            if(i>0 && path.charAt(i)=='N' && path.charAt(i-1)=='S')
+            if(path.charAt(i)=='N')
             {
-                result=true;
-                break;
+                y++;
             }
-            else if(i>0 && path.charAt(i)=='S' && path.charAt(i-1)=='N')
+            else if(path.charAt(i)=='S')
             {
-                result=true;
-                break;
+                y--;
             }
-            else if(i>0 && path.charAt(i)=='E' && path.charAt(i-1)=='W')
+            else if(path.charAt(i)=='W')
             {
-                 result=true;
-                 break;
+                x--;
             }
-            else if(i>0 && path.charAt(i)=='W' && path.charAt(i-1)=='E')
+            else if(path.charAt(i)=='E')
             {
-                 result=true;
-                 break;
+                x++;
             }
-            else
+            String str=Integer.toString(x)+" "+Integer.toString(y);
+            if(hset.contains(str))
             {
-                if(path.charAt(i)=='N')
-                {
-                    ch[0]++;
-                }
-                else if(path.charAt(i)=='S')
-                {
-                    ch[1]++;
-                }
-                 else if(path.charAt(i)=='W')
-                {
-                    ch[2]++;
-                }
-                 else
-                {
-                    ch[3]++;
-                }
-                
-                if(ch[0]==ch[1]  && ch[2]==ch[3])
-                {
-                    result=true;
-                    break;
-                }
-                    
+                return true;
             }
+            hset.add(str);
+           
         }
-        
-        return result;
-        
+
+        return false;
     }
 }
