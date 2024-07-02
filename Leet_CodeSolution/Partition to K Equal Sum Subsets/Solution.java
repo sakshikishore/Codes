@@ -54,7 +54,7 @@ class Solution {
         }
         if(sum%k==0)
         {
-            for(int i=0;i<16;i++)
+            for(int i=0;i<nums.length;i++)
             {
                 s+=Math.pow(2,i);
             }
