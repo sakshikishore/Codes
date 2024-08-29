@@ -1,0 +1,51 @@
+class Solution {
+    public String robotWithString(String s) {
+      int ch[]=new int[26];
+      int count=0;
+      StringBuffer sb=new StringBuffer("");
+      for(int i=s.length()-1;i>=0;i--)
+      {
+        if(ch[s.charAt(i)-'a']==0)
+        {
+            ch[s.charAt(i)-'a']=i;
+            count++;
+        }
+        if(count==26)
+        {
+            break;
+        }
+
+      }
+
+       Stack<Integer> st=new Stack<Integer>();
+        for(int i=0;i<s.length();i++){
+           st.push(i);
+           while(st.size()>0)
+           {
+             char c=s.charAt(st.peek());
+             int p=c-'a';
+             int flag=0;
+             for(int j=0;j<p;j++)
+             {
+                 if(ch[j]>i)
+                 {
+                    flag=1;
+                    break;
+                 }
+             }
+             if(flag==0)
+             {
+                st.pop();
+                sb.append(c);
+             }
+             else
+             {
+                break;
+             }
+           }
+           
+        }
+
+        return sb.toString();
+    }
+}
