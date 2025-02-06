@@ -1,9 +1,9 @@
 class Solution {
-    boolean result=false;
-    int p[];
+    boolean res=false;
+    int result[];
     public void Solve(int a[],int n, int arr[])
     {
-        if(result)
+        if(res)
         {
             return;
         }
@@ -18,12 +18,11 @@ class Solution {
         }
         if(flag==0)
         {
-          
-            for(int i=0;i<a.length;i++)
-            {
-                p[i]=a[i];
-            }
-            result=true;
+           for(int i=0;i<a.length;i++)
+           {
+            result[i]=a[i];
+           }
+            res=true;
             return;
         }
         for(int i=n;i>=1;i--)
@@ -62,11 +61,10 @@ class Solution {
         }
     }
     public int[] constructDistancedSequence(int n) {
-        int result[]=new int[(2*n)-1];
-        p=new int[(2*n)-1];
+        int a[]=new int[(2*n)-1];
+        result=new int[a.length];
         int arr[]=new int[n+1];
-        Solve(result,n,arr);
-
-        return p;
+        Solve(a,n,arr);
+        return result;
     }
 }
