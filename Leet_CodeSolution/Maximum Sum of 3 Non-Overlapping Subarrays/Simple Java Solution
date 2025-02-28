@@ -1,0 +1,78 @@
+class Solution {
+    public int[] maxSumOfThreeSubarrays(int[] nums, int k) {
+        int pref[][]=new int[nums.length][3];
+        int sum=0;
+        for(int i=0;i<k;i++)
+        {
+           sum+=nums[i];
+        }
+        pref[k-1][0]=sum; // maximum sum
+        pref[k-1][1]=0; // maximum sum smallest Index
+        pref[k-1][2]=sum; // current sum;
+        int j=0;
+        for(int i=k;i<nums.length;i++)
+        {
+            sum=sum-nums[j];
+            sum=sum+nums[i];
+            pref[i][2]=sum;
+            if(sum>pref[i-1][0])
+            {
+                pref[i][0]=sum;
+                pref[i][1]=j+1;
+            }
+            else
+            {
+                pref[i][0]=pref[i-1][0];
+                pref[i][1]=pref[i-1][1]; 
+            }
+            j++;
+        }
+
+
+        int suf[][]=new int[nums.length][2];
+        j=nums.length-1;
+        sum=0;
+        for(int i=0;i<k;i++)
+        {
+            sum+=nums[j];
+            j--;
+        }
+        suf[j+1][0]=sum;
+        suf[j+1][1]=j+1;
+        int t=nums.length-1;
+      while(j>=0)
+      {
+          sum=sum-nums[t];
+          sum=sum+nums[j];
+          if(sum>=suf[j+1][0])
+            {
+                suf[j][0]=sum;
+                suf[j][1]=j;
+            }
+            else
+            {
+                suf[j][0]=suf[j+1][0];
+                suf[j][1]=suf[j+1][1];
+            }
+            t--;
+          j--;
+      }
+      sum=0;
+      int result[]=new int[3];
+      for(int i=(k*2-1);i<nums.length-k;i++)
+      {
+         int s=pref[i][2]+pref[i-k][0]+suf[i+1][0];
+         if(sum<s)
+         {
+             sum=s;
+             result[0]=pref[i-k][1];
+             result[1]=i-k+1;
+             result[2]=suf[i+1][1];
+         }
+      }
+
+      return result;
+
+
+    }
+}
