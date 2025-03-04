@@ -1,24 +1,32 @@
 import java.math.*;
 class Solution {
-    public boolean checkPowersOfThree(int n) {
-        ArrayList<Integer> l=new ArrayList<Integer>();
-        boolean result=true;
-        int x=n;
-        while(result && x!=0)
+    boolean result=false;
+    public void Solve(int i,int ans,int n)
+    {
+       
+        if(ans>n)
         {
-            n=(int)(Math.log(x)/Math.log(3));
-            x=x-((int)Math.pow(3,n));
-            if(!l.contains(n))
-            {
-                l.add(n);
-            }
-            else
-            {
-                result=false;
-            }
+            return;
         }
-        return result;
-        
-        
+        if(result)
+        {
+            return;
+        }
+        if(ans==n)
+        {
+            result=true;
+            return;
+        }
+        if(i+1>25)
+        {
+            return ;
+        }
+        Solve(i+1,ans+(int)Math.pow(3,i),n);
+        Solve(i+1,ans,n);
+
+    }
+    public boolean checkPowersOfThree(int n) {
+          Solve(0,0,n); 
+          return result; 
     }
 }
