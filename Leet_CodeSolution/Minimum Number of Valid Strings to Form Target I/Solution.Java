@@ -48,6 +48,7 @@ class Solution {
             createTree(words[i], 0, root);
         }
         int dp[] = new int[target.length()];
+        int start=0;
         for (int i = 0; i < dp.length; i++) {
             int j = search(target, i, root);
             if (j == i) {
@@ -55,20 +56,22 @@ class Solution {
                     return -1;
                 }
             } else {
-                for (int p = i; p < j; p++) {
-                    if (dp[p] == 0) {
-                        if (i == 0) {
-                            dp[p] = 1;
-                        } else {
-                            dp[p] = dp[i - 1] + 1;
-                        }
-                    } else {
-
-                        dp[p] = Math.min((dp[i - 1] + 1), dp[p]);
+                for (int p = start; p < j; p++) {
+                      if(i==0)
+                      {
+                        dp[p]=1;
+                      }
+                      else
+                      {
+                        dp[p]=dp[i-1]+1;
+                      }
+                    }
+                    if(start<j)
+                    {
+                       start=j;
                     }
                 }
             }
-        }
 
         return dp[dp.length - 1];
     }
