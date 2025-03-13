@@ -1,0 +1,37 @@
+class Solution {
+    int max = 0;
+    int result[]=new int[12];
+    public void Solve(int numArrows,int[] aliceArrows,int index,int score,int arr[])
+    {
+        if(index==aliceArrows.length || numArrows==0)
+        {
+            max=Math.max(max,score);
+            if(max==score)
+            {
+                for(int j=0;j<12;j++)
+                {
+                    result[j]=arr[j];
+                }
+                if(numArrows!=0)
+                {
+                    result[0]=numArrows;
+                }
+            }
+            return;
+        }
+        int x=aliceArrows[index]+1;
+        if(numArrows>=x)
+        {
+            arr[index]=x;
+            Solve(numArrows-x,aliceArrows,index+1,score+index,arr);
+            arr[index]=0;
+        }
+        Solve(numArrows,aliceArrows,index+1,score,arr);
+    }
+
+    public int[] maximumBobPoints(int numArrows, int[] aliceArrows) {
+        int arr[] = new int[12];
+        Solve(numArrows, aliceArrows, 1, 0, arr);
+        return result;
+    }
+}
